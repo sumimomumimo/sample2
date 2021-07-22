@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>今日のメニューはこれ！</title>
+
+  <link rel="stylesheet" href="sanitize.css">
+  <!--<link rel="stylesheet" href="css/style.css">-->
+  <style>
+    h1 {font-size: 24px; margin: 0;}
+    p {font-size: 14px;}
+    img {box-shadow: 0 0 8px rgb(0, 0, 0, .4) }
+    body {text-align: center}
+    img {
+      cursor: pointer;
+    }
+  </style>
+ 
+</head>
+<body>
+  <div class="content" style="background-color: rgb(204, 245, 255); width: 800px; margin: 0 auto;">
+  <header>
+    <h1>今日のメニューはこれ！</h1>
+    <p>献立を自動で決めてストレスフリー</p>
+    <!--<a href="" class="btn">中華料理</a>-->
+    {% load static%}
+    
+    <img src="{% static "food_gyouza_enban.png" %}"  alt="中華料理" width="200" height="200" id="image1">
+    <img src="{% static "food_yakiniku_samugyopusaru.png" %}" alt="韓国料理" width="200" height="200" id="image2">
+    <img src="{% static "food_spaghetti_vongole_bianco.png" %}" alt="イタリア料理" width="200" height="200" id="image3">
+    
+  </header>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- <script src="path/to/my/store.legacy.min.js"></script> -->
+  
+  <script>
+  
+    document.getElementById('image1').addEventListener('click', function() {
+      window.location.href ='{{ url1 }}';
+    });
+  
+    document.getElementById('image2').addEventListener('click', function() {
+      window.location.href = '{{ url2 }}'; 
+    });
+
+    document.getElementById('image3').addEventListener('click', function() {
+      window.location.href = '{{ url3 }}'; 
+    });
+
+  </script>
+  <!-- <p>{{ url1 }}</p>
+  <p>{{ url2 }}</p>
+  <p>{{ url3 }}</p> -->
+</body>
+</html>
